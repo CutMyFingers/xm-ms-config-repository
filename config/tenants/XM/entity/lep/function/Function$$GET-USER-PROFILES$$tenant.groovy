@@ -6,7 +6,7 @@ import org.springframework.data.jpa.domain.Specifications
 entityService = lepContext.services.xmEntity
 
 def userProfiles = entityService.findAll(Specifications.where({ Root root, CriteriaQuery query, CriteriaBuilder cb ->
-    return cb.and(cb.equal(root.get('typeKey'), 'USER'))
+    return cb.equal(root.get('typeKey'), 'USER')
 }))
 
 def users = entityService.findAll(Specifications.where({ Root root, CriteriaQuery query, CriteriaBuilder cb ->
