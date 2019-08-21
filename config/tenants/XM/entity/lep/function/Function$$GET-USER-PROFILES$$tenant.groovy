@@ -9,5 +9,5 @@ def users = entityService.findAll(Specifications.where({ Root root, CriteriaQuer
     return cb.equal(root.get('typeKey'), 'USER')
 }))
 
-Map<String, Object> map = ["data": users.first()]
+Map<String, String> map = ["data": "hey"]
 return map
