@@ -7,6 +7,6 @@ import org.slf4j.LoggerFactory
 entityService = lepContext.services.xmEntity
 
 def log = LoggerFactory.getLogger(getClass())
-log.info("AAAAAAAAAAAAAAAAAAAAAAAAA")
+log.error("AAAAAAAAAAAAAAAAAAAAAAAAA")
 
 return [: ]
