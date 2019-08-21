@@ -5,21 +5,9 @@ import org.springframework.data.jpa.domain.Specifications
 
 entityService = lepContext.services.xmEntity
 
-def userProfiles = entityService.findAll(Specifications.where({ Root root, CriteriaQuery query, CriteriaBuilder cb ->
+def users = entityService.findAll(Specifications.where({ Root root, CriteriaQuery query, CriteriaBuilder cb ->
     return cb.equal(root.get('typeKey'), 'USER')
 }))
 
-def users = entityService.findAll(Specifications.where({ Root root, CriteriaQuery query, CriteriaBuilder cb ->
-    return cb.equal(root.get('typeKey'), 'APPLICATION')
-}))
-
-for (def user: users) {
-    for (def link: user.getTargets()) {
-        userProfiles = userProfiles.stream()
-                .filter { profile -> profile.id != link.target.id }
-                .collect()
-    }
-}
-
-Map<String, Object> map = ["data": userProfiles]
+Map<String, Object> map = ["data": users]
 return map
