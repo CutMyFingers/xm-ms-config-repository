@@ -7,11 +7,6 @@ import org.slf4j.LoggerFactory
 entityService = lepContext.services.xmEntity
 
 def log = LoggerFactory.getLogger(getClass())
-log.error('blah')
+log.info("AAAAAAAAAAAAAAAAAAAAAAAAA")
 
-def users = entityService.findAll(Specifications.where({ Root root, CriteriaQuery query, CriteriaBuilder cb ->
-    return cb.equal(root.get('typeKey'), 'USER')
-}))
-
-Map<String, String> map = ["data": "hey"]
-return map
+return [: ]
