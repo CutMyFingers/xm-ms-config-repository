@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 10d57cf1cf4201728a42f7661dd1cac5d0a55723
 import javax.persistence.criteria.CriteriaBuilder
 import javax.persistence.criteria.CriteriaQuery
 import javax.persistence.criteria.Root
